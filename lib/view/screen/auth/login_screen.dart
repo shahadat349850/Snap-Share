@@ -141,6 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   const Row(
                     children: [
+
                       Icon(
                         Icons.check_box_outline_blank,
                         color: Colors.black,
