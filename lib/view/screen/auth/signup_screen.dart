@@ -304,6 +304,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             fontWeight: FontWeight.w500)),
                   )
                 ],
+
               )
             ],
           ),
