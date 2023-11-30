@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:snapshare/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,16 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      home: const FirstScreen(),
     );
+  }
+}
+
+class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
   }
 }
