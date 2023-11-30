@@ -13,8 +13,10 @@ class LoginScreen extends StatelessWidget {
         children: [
           Center(
             child: Text("Login Screen",style: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: 25
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+              color: Colors.red
+
             ),),
 
           ),
