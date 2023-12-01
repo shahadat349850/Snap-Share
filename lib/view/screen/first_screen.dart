@@ -7,6 +7,7 @@ class FirstScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Theme.of(context).brightness;
     return  Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -14,17 +15,17 @@ class FirstScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Image(image: AssetImage(Constant.sociaLiveTextLogoPNG,),),
+             Image(image: AssetImage(
+              Theme.of(context).brightness == Brightness.dark ?
+              Constant.sociaLiveTextLogoWhitePNG:
+              Constant.sociaLiveTextLogoBlackPNG
+            ),),
             const SizedBox(height: 50,),
             SizedBox(
               width: double.infinity,
-              height: 50,
               child: ElevatedButton(
                   onPressed: (){},
-                  child: const Text("Create Account",
-                  style: TextStyle(
-                    fontSize: 18
-                  ),)),
+                  child: const Text("Create Account")),
             ),
             const SizedBox(height: 10,),
             Row(
@@ -32,16 +33,15 @@ class FirstScreen extends StatelessWidget {
               children: [
                 TextButton(
                     onPressed: (){},
-                    child: const Text("Log In",style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),)),
+                    child: Text("Log In",style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      color: Colors.blue
+                    )),
+                ),
                 IconButton(
                     onPressed: (){},
-                   // icon: Icon(Icons.keyboard_arrow_down))
                     icon: Image.asset(Constant.downArrowIconPNG),)
               ],
-            )
+            ),
 
           ],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snapshare/utils/theme.dart';
 import 'package:snapshare/view/screen/first_screen.dart';
 
 class SnapShare extends StatelessWidget {
@@ -9,11 +10,9 @@ class SnapShare extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const FirstScreen(),
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: false,
-        brightness: Brightness.light,
-      ),
+      themeMode: ThemeMode.system,
+      theme: SnapShareAppTheme.lightTheme, // light mode
+      darkTheme: SnapShareAppTheme.darkTheme, // dark mode
     );
   }
 }
