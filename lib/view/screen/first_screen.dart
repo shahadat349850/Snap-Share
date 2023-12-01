@@ -25,7 +25,7 @@ class FirstScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                   onPressed: (){},
-                  child: const Text("Create Account")),
+                  child: const Text("Create Account.")),
             ),
             const SizedBox(height: 10,),
             Row(
