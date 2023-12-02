@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:snapshare/utils/colors.dart';
 import 'package:snapshare/utils/constant.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -39,10 +41,11 @@ class FirstScreen extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: (){},
-                  icon: Image.asset(Constant.downArrowIconPNG),)
+                  icon: const Icon(Iconsax.arrow_down_1,
+                  color: AppColors.iconColor,),
+                ),
               ],
             ),
-
           ],
         ),
       ),
