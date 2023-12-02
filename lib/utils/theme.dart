@@ -44,7 +44,6 @@ class SnapShareAppTheme {
     ),
 
     //...........ElevatedButton Theme..............//
-
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
@@ -63,7 +62,6 @@ class SnapShareAppTheme {
     ),
 
     //...........TextFormField Theme..............//
-
     inputDecorationTheme: InputDecorationTheme(
       errorMaxLines: 3,
       prefixIconColor: Colors.black,
@@ -134,7 +132,6 @@ class SnapShareAppTheme {
     ),
 
     //...........Elevated Button Theme..............//
-
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
@@ -153,7 +150,6 @@ class SnapShareAppTheme {
     ),
 
     //...........TextFormField Theme..............//
-
     inputDecorationTheme: InputDecorationTheme(
       errorMaxLines: 3,
       prefixIconColor: Colors.white,
