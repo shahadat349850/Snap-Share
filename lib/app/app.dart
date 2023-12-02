@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../view/widget/post_design_card.dart';
+
 class SnapShare extends StatelessWidget {
   const SnapShare({super.key});
 
@@ -10,6 +12,7 @@ class SnapShare extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      home: PostDesignCard(),
     );
   }
 }
