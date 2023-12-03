@@ -98,7 +98,7 @@ class SnapShareAppTheme {
         titleSpacing: 0,
         centerTitle: false,
         backgroundColor: AppColors.lightBackgroundColor,
-        iconTheme: IconThemeData(color:AppColors.lightIconColor,size: 20),
+        iconTheme: IconThemeData(color:AppColors.lightIconColor,size: 2),
         actionsIconTheme: IconThemeData(color: AppColors.lightIconColor),
         titleTextStyle: TextStyle(
             color: AppColors.lightTextColor,
@@ -158,6 +158,7 @@ class SnapShareAppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
+        minimumSize: const Size.fromHeight(50),
         foregroundColor: AppColors.buttonForegroundColor,
         backgroundColor: AppColors.buttonBackgroundColor,
         disabledBackgroundColor: AppColors.buttonDisabledBackgroundColor,
