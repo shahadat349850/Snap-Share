@@ -49,6 +49,7 @@ class SnapShareAppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
+        minimumSize: const Size.fromHeight(50),
         foregroundColor: AppColors.buttonForegroundColor,
         backgroundColor: AppColors.buttonBackgroundColor,
         disabledBackgroundColor: AppColors.buttonDisabledBackgroundColor,
