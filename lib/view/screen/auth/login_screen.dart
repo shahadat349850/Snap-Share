@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../widget/metarial_button.dart';
+
+import 'main_bottom_navigation_screen.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -14,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _isPasswordVisible = true;
+  bool isChecked = true;
   final _logInFormKey = GlobalKey<FormState>();
 
   final TextEditingController emailAddressController = TextEditingController();
@@ -104,12 +107,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 16,
                   ),
-                  CheckboxListTile(
-                    title: Text("title text"),
-                    value: false,
-                    tristate: true,
-                    onChanged: (value) { },
-                    controlAffinity: ListTileControlAffinity.leading,),
+                  Row(
+                    children: [
+                      Transform.scale(
+                        scale: 1.5, // Adjust the scale factor to increase/decrease size
+                        child: Checkbox(
+                          value: isChecked,
+                          onChanged: (value) {
+                            setState(() {
+                              isChecked = value!;
+                            });
+                          },
+                        ),
+                      ),
+                      Text("Save password",
+                          style: Theme.of(context).textTheme.bodySmall),
+                    ],
+                  ),
 
                   const SizedBox(
                     height: 16,
@@ -118,7 +132,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        if (_logInFormKey.currentState!.validate()) {}
+                        if (_logInFormKey.currentState!.validate()) {
+                          Get.to(()=> const MainBottomNavigationScreen());
+                        }
                       },
                       child: const Text("Log In"),
                     ),
