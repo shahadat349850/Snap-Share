@@ -22,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailAddressController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +56,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextFormField(
                       controller: emailAddressController,
                       keyboardType: TextInputType.emailAddress,
+                      onChanged: (_){
+                        setState(() {
+                        });
+                      },
                       decoration: const InputDecoration(
                         hintText: "Input Email",
                         prefixIcon: Icon(Iconsax.sms)
@@ -78,6 +83,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: passwordController,
                     keyboardType: TextInputType.phone,
                     obscureText: _isPasswordVisible,
+                    onChanged: (_){
+                      setState(() {
+                      });
+                    },
                     decoration: InputDecoration(
                         hintText: "Input Password",
                         prefixIcon: const Icon(Iconsax.lock_1),
@@ -110,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     children: [
                       Transform.scale(
-                        scale: 1.5, // Adjust the scale factor to increase/decrease size
+                        scale: 1, // Adjust the scale factor to increase/decrease size
                         child: Checkbox(
                           value: isChecked,
                           onChanged: (value) {
@@ -131,11 +140,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: (emailAddressController.text.isNotEmpty &&
+                      passwordController.text.isNotEmpty) ? () {
                         if (_logInFormKey.currentState!.validate()) {
                           Get.to(()=> const MainBottomNavigationScreen());
                         }
-                      },
+                      } : null,
                       child: const Text("Log In"),
                     ),
                   ),
