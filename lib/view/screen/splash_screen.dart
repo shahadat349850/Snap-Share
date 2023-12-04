@@ -3,11 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:snapshare/view/screen/auth/main_bottom_navigation_screen.dart';
+import 'package:snapshare/utils/constant.dart';
 import 'package:snapshare/view/screen/first_screen.dart';
-import 'package:snapshare/view/screen/home_screen.dart';
 
-import '../../utils/constant.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

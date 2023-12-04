@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../utils/colors.dart';
-import '../home_screen.dart';
+import '../../utils/colors.dart';
+import 'home_screen.dart';
 
 class MainBottomNavigationScreen extends StatefulWidget {
   const MainBottomNavigationScreen({super.key});

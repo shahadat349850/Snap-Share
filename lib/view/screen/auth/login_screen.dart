@@ -4,7 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 
-import 'main_bottom_navigation_screen.dart';
+import '../main_bottom_navigation_screen.dart';
 
 
 class LoginScreen extends StatefulWidget {
