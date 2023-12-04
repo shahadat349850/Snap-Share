@@ -54,7 +54,7 @@ class SnapShareAppTheme {
         backgroundColor: AppColors.buttonBackgroundColor,
         disabledBackgroundColor: AppColors.buttonDisabledBackgroundColor,
         disabledForegroundColor: AppColors.buttonDisabledForegroundColor,
-        side: const BorderSide(color: AppColors.buttonBorderColor),
+      //  side: const BorderSide(color: AppColors.buttonBorderColor),
         padding: const EdgeInsets.symmetric(vertical: 12),
         textStyle: const TextStyle(
             fontSize: 16, fontWeight: FontWeight.w600),
@@ -158,11 +158,12 @@ class SnapShareAppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
+        minimumSize: const Size.fromHeight(50),
         foregroundColor: AppColors.buttonForegroundColor,
         backgroundColor: AppColors.buttonBackgroundColor,
         disabledBackgroundColor: AppColors.buttonDisabledBackgroundColor,
         disabledForegroundColor: AppColors.buttonDisabledForegroundColor,
-        side: const BorderSide(color: AppColors.buttonBorderColor),
+      //  side: const BorderSide(color: AppColors.buttonBorderColor),
         padding: const EdgeInsets.symmetric(vertical: 12),
         textStyle: const TextStyle(
             fontSize: 16, fontWeight: FontWeight.w600),
