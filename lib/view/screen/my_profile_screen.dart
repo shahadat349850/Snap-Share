@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:snapshare/view/widget/image_data.dart';
 
-import '../../widget/GridViewWidget.dart';
-import '../../widget/ListViewWidget.dart';
-import '../../widget/ProfileCard.dart';
+import '../widget/GridViewWidget.dart';
+import '../widget/ListViewWidget.dart';
+import '../widget/ProfileCard.dart';
 
 class MyProfileScreen extends StatefulWidget {
   const MyProfileScreen({super.key});
