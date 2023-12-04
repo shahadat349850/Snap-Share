@@ -23,8 +23,8 @@ class FirstScreen extends StatelessWidget {
           children: [
             Image(image: AssetImage(
                 Theme.of(context).brightness == Brightness.dark ?
-                Constant.sociaLiveTextLogoWhitePNG:
-                Constant.sociaLiveTextLogoBlackPNG
+                Constant.socialLiveTextLogoWhitePNG:
+                Constant.socialLiveTextLogoBlackPNG
             ),),
             const SizedBox(height: 50,),
             SizedBox(

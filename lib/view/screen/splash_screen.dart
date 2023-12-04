@@ -15,7 +15,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     goToNextScreen();
@@ -23,10 +22,12 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> goToNextScreen() async {
-    Future.delayed(const Duration(seconds: 3)).then((value)  {
-         Get.offAll(()=> const FirstScreen());
-    },);
-    }
+    Future.delayed(const Duration(seconds: 3)).then(
+      (value) {
+        Get.offAll(() => const FirstScreen());
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,20 +38,23 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           const Spacer(),
           Center(
-            child: Image(image: AssetImage(
-                Theme.of(context).brightness == Brightness.dark ?
-                Constant.sociaLiveTextLogoWhitePNG:
-                Constant.sociaLiveTextLogoBlackPNG
-            ),),
+            child: Image(
+              image: AssetImage(Theme.of(context).brightness == Brightness.dark
+                  ? Constant.socialLiveTextLogoWhitePNG
+                  : Constant.socialLiveTextLogoBlackPNG),
+            ),
           ),
           const Spacer(),
           const CircularProgressIndicator(),
-          const SizedBox(height: 16,),
+          const SizedBox(
+            height: 16,
+          ),
           const Text("Version 1.0.0"),
-          const SizedBox(height: 16,),
+          const SizedBox(
+            height: 16,
+          ),
         ],
       ),
     );
   }
 }
-
