@@ -34,8 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 const Spacer(),
                 Image(image: AssetImage(
                     Theme.of(context).brightness == Brightness.dark ?
-                    Constant.sociaLiveTextLogoWhitePNG:
-                    Constant.sociaLiveTextLogoBlackPNG
+                    Constant.socialLiveTextLogoWhitePNG:
+                    Constant.socialLiveTextLogoBlackPNG
                 ),),
                 const Spacer(),
                 CircularIconButton(
