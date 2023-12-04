@@ -1,6 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:snapshare/utils/colors.dart';
 import 'package:snapshare/utils/constant.dart';
+import 'package:snapshare/view/screen/auth/login_screen.dart';
+import 'package:snapshare/view/screen/auth/signup_screen.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -17,32 +23,36 @@ class FirstScreen extends StatelessWidget {
           children: [
             Image(image: AssetImage(
                 Theme.of(context).brightness == Brightness.dark ?
-                Constant.sociaLiveTextLogoWhitePNG:
-                Constant.sociaLiveTextLogoBlackPNG
+                Constant.socialLiveTextLogoWhitePNG:
+                Constant.socialLiveTextLogoBlackPNG
             ),),
             const SizedBox(height: 50,),
             SizedBox(
-              width: double.infinity,
               child: ElevatedButton(
-                  onPressed: (){},
-                  child: const Text("Create Account.")),
+                  onPressed: (){
+                    Get.to(()=> const SignupScreen());
+                  },
+                  child: const Text("Create Account")),
             ),
             const SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Get.to(()=> const LoginScreen());
+                  },
                   child: Text("Log In",style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      color: Colors.blue
+                      color: const Color(0xFF4478FF)
                   )),
                 ),
                 IconButton(
                   onPressed: (){},
-                  icon: Image.asset(Constant.downArrowIconPNG),)
+                  icon: const Icon(Iconsax.arrow_down_1,
+                  color: AppColors.iconColor,),
+                ),
               ],
             ),
-
           ],
         ),
       ),

@@ -1,6 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:snapshare/view/screen/first_screen.dart';
+
+import '../../utils/constant.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,35 +17,44 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    goToNextScreen();
     super.initState();
-    Timer(
-        const Duration(seconds: 3),
-        () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => HomeScreen())));
+  }
+
+  Future<void> goToNextScreen() async {
+    Future.delayed(const Duration(seconds: 3)).then(
+      (value) {
+        Get.offAll(() => const FirstScreen());
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+    Theme.of(context).brightness;
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Image.asset('assets/images/app_icon.png'),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Spacer(),
+          Center(
+            child: Image(
+              image: AssetImage(Theme.of(context).brightness == Brightness.dark
+                  ? Constant.socialLiveTextLogoWhitePNG
+                  : Constant.socialLiveTextLogoBlackPNG),
+            ),
+          ),
+          const Spacer(),
+          const CircularProgressIndicator(),
+          const SizedBox(
+            height: 16,
+          ),
+          const Text("Version 1.0.0"),
+          const SizedBox(
+            height: 16,
+          ),
+        ],
       ),
     );
   }
 }
-
-// TODO- Remove This HomeScreen -----down-----
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-          child: Text(
-        "Welcome to home page",
-        style: TextStyle(fontSize: 25.0),
-      )),
-    );
-  }
-}
-// TODO- Remove This HomeScreen -----up-----
