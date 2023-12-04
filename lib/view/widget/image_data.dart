@@ -29,6 +29,6 @@ ImageData(
 ImageData(
 'https://www.penguins.co.uk/hubfs/employee_motivation_header.jpg'),
 ImageData(
-'https://i.ytimg.com/vi/56Qu3MY5EnU/maxresdefault.jpg')
+'https://i.ytimg.com/vi/56Qu3MY5EnU/maxresdefault.jpg'),
 ];
 }
