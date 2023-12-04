@@ -4,7 +4,7 @@ class AppColors{
   AppColors._();
 
   // App Basic Colors
-  static const Color primaryColor =  Color(0xFF018BFF);
+  static const Color primaryColor =  Color(0xFF4478FF);
   static const Color secondaryColor = Color(0xFF6993FF);
   static const Color accentColor = Color(0xFFb0c7ff);
 
@@ -23,7 +23,7 @@ class AppColors{
   static const Color darkContainerColor  = Color(0xFF000000);
 
   // Button Colors
-  static const Color buttonBackgroundColor = Color(0xFF018BFF);
+  static const Color buttonBackgroundColor = Color(0xFF4478FF);
   static const Color buttonBorderColor = Color(0xFF018BFF);
   static const Color buttonForegroundColor = Color(0xFFFFFFFF);
   static const Color buttonDisabledBackgroundColor = Color(0xFFDAE4FF);
@@ -37,7 +37,7 @@ class AppColors{
   // Icons Colors
   static const Color lightIconColor = Color(0xFF000000);
   static const Color darkIconColor  = Color(0xFFFFFFFF);
-  static const Color iconColor  = Color(0xFF018BFF);
+  static const Color iconColor  = Color(0xFF4478FF);
 
   // Error and Validation Colors
   static const Color errorColor = Color(0xFFD32F2F);
