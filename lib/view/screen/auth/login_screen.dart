@@ -18,10 +18,24 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isPasswordVisible = true;
   bool isChecked = true;
   final _logInFormKey = GlobalKey<FormState>();
+  bool isButtonEnabled = false;
 
   final TextEditingController emailAddressController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  @override
+  void initState() {
+    super.initState();
+    emailAddressController.addListener(updateButtonState);
+    passwordController.addListener(updateButtonState);
+  }
+
+  void updateButtonState() {
+    setState(() {
+      isButtonEnabled =
+          emailAddressController.text.isNotEmpty && passwordController.text.isNotEmpty;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,10 +70,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextFormField(
                       controller: emailAddressController,
                       keyboardType: TextInputType.emailAddress,
-                      onChanged: (_){
-                        setState(() {
-                        });
-                      },
                       decoration: const InputDecoration(
                         hintText: "Input Email",
                         prefixIcon: Icon(Iconsax.sms)
@@ -83,10 +93,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: passwordController,
                     keyboardType: TextInputType.phone,
                     obscureText: _isPasswordVisible,
-                    onChanged: (_){
-                      setState(() {
-                      });
-                    },
                     decoration: InputDecoration(
                         hintText: "Input Password",
                         prefixIcon: const Icon(Iconsax.lock_1),
@@ -290,4 +296,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // ),
     );
   }
+
 }
+
+
