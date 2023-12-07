@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../utils/colors.dart';
 import 'home_screen.dart';
+import 'my_profile_screen.dart';
 
 class MainBottomNavigationScreen extends StatefulWidget {
   const MainBottomNavigationScreen({super.key});
@@ -16,19 +16,26 @@ class _MainBottomNavigationScreenState extends State<MainBottomNavigationScreen>
 
   final List<Widget> _screens = [
     const HomeScreen(),
+    const MyProfileScreen(),
+    const HomeScreen(),
+    const MyProfileScreen(),
 
   ];
 
+  int _index=0;
 
   @override
   Widget build(BuildContext context) {
     Theme.of(context).brightness;
     return Scaffold(
-      body: _screens[0],
+      body: _screens[_index],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
+        currentIndex: _index,
         onTap: (value) {
-
+          print(value);
+           _index =value;
+           setState(() {
+           });
         },
         backgroundColor: Theme.of(context).brightness == Brightness.dark ?
         AppColors.darkBackgroundColor : AppColors.lightBackgroundColor,
