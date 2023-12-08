@@ -55,8 +55,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   Stack(
                     children: [
                        Center(
-                        child: _profileImage != null ?
-                        CircleAvatar(
+                        child: _profileImage != null ? CircleAvatar(
                           radius: screenWidth * 0.160,
                           backgroundColor: const Color(0xFF4478FF),
                           child: CircleAvatar(
@@ -64,15 +63,11 @@ class _SignupScreenState extends State<SignupScreen> {
                             backgroundImage: MemoryImage(_profileImage!),
                             radius: screenWidth * 0.155,
                           ),
-                        ) :
-                        CircleAvatar(
-                          radius: screenWidth * 0.160,
-                          backgroundColor: const Color(0xFF4478FF),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.white,
-                            backgroundImage: const AssetImage(Constant.profilePicturePlaceholderPNG),
-                            radius: screenWidth * 0.155,
-                          ),
+                        ) : CircleAvatar(
+                          backgroundColor: Colors.white,
+                          backgroundImage:
+                          const AssetImage(Constant.profilePicturePlaceholderPNG),
+                          radius: screenWidth * 0.155,
                         ),
                       ),
                       Positioned(
