@@ -7,7 +7,7 @@ class SnapShareAppTheme {
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: false,
-    // fontFamily: ,
+    fontFamily: 'Poppins',
     brightness: Brightness.light,
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.lightBackgroundColor,
@@ -116,7 +116,7 @@ class SnapShareAppTheme {
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: false,
-    // fontFamily: ,
+    fontFamily: 'Poppins' ,
     brightness: Brightness.dark,
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.darkBackgroundColor,
