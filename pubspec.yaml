@@ -23,11 +23,20 @@ dependencies:
   # Utility Packages
   flutter_staggered_grid_view: ^0.7.0
   image_picker: ^1.0.4
+  flutter_easyloading: ^3.0.5
+  flutter_shimmer: ^2.1.2
+  smart_snackbars: ^1.0.0
+  shared_preferences: ^2.2.2
+  permission_handler: ^11.0.1
 
   # Product Specific Packages
+  cloud_firestore: ^4.13.5
+  firebase_auth: ^4.15.2
+  firebase_core: ^2.16.0
+  firebase_storage: ^11.2.7
+  firebase_database: ^10.3.5
 
-
-  #---------------./ PACKAGES END---------------#
+  #---------------PACKAGES END---------------#
 
 
 dev_dependencies:
