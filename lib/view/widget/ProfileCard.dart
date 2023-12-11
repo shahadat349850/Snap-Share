@@ -3,102 +3,100 @@ import 'package:flutter/material.dart';
 class ProfileCart extends StatelessWidget {
   const ProfileCart({
     Key? key,
-    required this.ImageLink,
-    required this.Name,
+    required this.imageLink,
+    required this.name,
     required this.userName,
-    required this.BarName,
-    required this.Follower,
-    required this.Following,
-    required this.Post,
+    required this.appBarName,
+    required this.totalFollower,
+    required this.totalFollowing,
+    required this.totalPost,
   }) : super(key: key);
 
-  final String Name;
+  final String name;
   final String userName;
-  final String ImageLink;
-  final String BarName;
-  final String Post;
-  final String Following;
-  final String Follower;
+  final String imageLink;
+  final String appBarName;
+  final String totalPost;
+  final String totalFollowing;
+  final String totalFollower;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
       color: Colors.white,
-      margin: EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: 10),
       child: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              BarName,
-              style: TextStyle(
+              appBarName,
+              style: const TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20,),
             Row(
               children: [
                 CircleAvatar(
-                  radius: 35,
-                  backgroundImage: NetworkImage(ImageLink), // Fix here
+                  radius: 36,
+                  backgroundImage: NetworkImage(imageLink), // Fix here
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 14,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      Name,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w900,
+                      name,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w700,
                         fontSize: 17,
                       ),
                     ),
+                    const SizedBox(height: 3,),
                     Text(
                       userName,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                           color: Colors.black38),
                     ),
-                    SizedBox(
-                      height: 13,
+                    const SizedBox(
+                      height: 12,
                     ),
                     Row(
                       children: [
                         Text(
-                          Post,
-                          style: TextStyle(
+                          totalPost,
+                          style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black38),
+                              color: Colors.black54
+                          ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
+                        const SizedBox(width: 10),
                         Text(
-                          Following,
-                          style: TextStyle(
+                          totalFollowing,
+                          style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black38),
+                              color: Colors.black54
+                          ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
+                        const SizedBox(width: 10,),
                         Text(
-                          Follower,
-                          style: TextStyle(
+                          totalFollower,
+                          style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black38),
+                              color: Colors.black54
+                          ),
                         ),
                       ],
                     ),

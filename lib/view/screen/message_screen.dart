@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
@@ -16,7 +17,7 @@ class _MessageScreenState extends State<MessageScreen> {
   final TextEditingController _messageController = TextEditingController();
   final ScrollController _scrollController = ScrollController();
   late GlobalKey<AnimatedListState> _animatedListKey;
-  bool isSendButton = false;
+  Color _containerColor = Colors.grey;
 
   // Initialize with two fixed messages
   final List<Map<String, dynamic>> _fixedMessages = [
@@ -41,6 +42,7 @@ class _MessageScreenState extends State<MessageScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Theme.of(context).brightness;
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
@@ -110,7 +112,8 @@ class _MessageScreenState extends State<MessageScreen> {
                   child: SizedBox(
                     height: 45,
                     child: TextField(
-                      onChanged: (_) {
+                      onChanged: (text) {
+                        _containerColor = text.isEmpty ? Colors.grey : Colors.blue;
                         setState(() {});
                       },
                       controller: _messageController,
@@ -123,25 +126,15 @@ class _MessageScreenState extends State<MessageScreen> {
                         contentPadding: const EdgeInsets.only(
                             left: 15, bottom: 11, top: 11, right: 15),
                         filled: true,
-                        fillColor: Colors.white,
-                        suffixIcon: Container(
+                        fillColor: Theme.of(context).brightness == Brightness.dark ? Colors.black : Colors.white,                        suffixIcon: Container(
                           margin: const EdgeInsets.all(2),
-                          decoration: const BoxDecoration(
-                            color: Colors.blue,
-                          ),
+                            color: _containerColor,
                           child: IconButton(
-                            disabledColor: Colors.blue,
                             color: Colors.white,
-                            icon: const Icon(
-                              Iconsax.send_1,
-                            ),
-                            onPressed: (_messageController.text.isNotEmpty)
-                                ? () {
+                            icon: const Icon(Iconsax.send_1),
+                            onPressed: () {
                                     _sendMessage();
-                                    isSendButton = false;
-                                    setState(() {});
-                                  }
-                                : null,
+                                  },
                           ),
                         ),
                         hintText: 'Write message',

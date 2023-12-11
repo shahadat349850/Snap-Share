@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:snapshare/view/widget/image_data.dart';
+import '../../utils/image_url.dart';
 
-class GridViewWidget extends StatelessWidget {
-  const GridViewWidget({
+class UserProfileGridViewPhoto extends StatelessWidget {
+  const UserProfileGridViewPhoto({
     super.key,
-    required this.itemList,
   });
-
-  final List<ImageData> itemList;
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +17,14 @@ class GridViewWidget extends StatelessWidget {
           crossAxisSpacing: 4,
           repeatPattern: QuiltedGridRepeatPattern.inverted,
           pattern: [
-            QuiltedGridTile(2, 2),
-            QuiltedGridTile(1, 1),
-            QuiltedGridTile(1, 1),
-            QuiltedGridTile(1, 2),
+            const QuiltedGridTile(2, 2),
+            const QuiltedGridTile(1, 1),
+            const QuiltedGridTile(1, 1),
+            const QuiltedGridTile(1, 2),
           ],
         ),
         childrenDelegate: SliverChildBuilderDelegate(
-            childCount: itemList.length,
+           childCount: 20,
                 (context, index) => Padding(
               padding:const EdgeInsets.all(5.0),
               child: SizedBox(
@@ -35,15 +32,14 @@ class GridViewWidget extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    itemList[index].path,
-                    fit: BoxFit.fill,
+                    AssetsPath.profileLogo,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
             )
         ),
       ),
-
     );
   }
 }

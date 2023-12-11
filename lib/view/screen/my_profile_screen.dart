@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:snapshare/view/widget/image_data.dart';
-
-import '../widget/GridViewWidget.dart';
-import '../widget/ListViewWidget.dart';
+import 'package:snapshare/utils/image_url.dart';
+import '../widget/user_profile_gridview_photo.dart';
+import '../widget/user_profile_listview_photo.dart';
 import '../widget/ProfileCard.dart';
 
 class MyProfileScreen extends StatefulWidget {
@@ -14,95 +13,92 @@ class MyProfileScreen extends StatefulWidget {
 
 class _MyProfileScreenState extends State<MyProfileScreen> {
 
-  List<ImageData> itemList = getImageDataList();
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const ProfileCart(
-              ImageLink: 'https://img.freepik.com/premium-photo/close-up-asian-charming-modern-hipster-man-yellow-t-shirt-smiling-with-confident-assertive-expression-newbie-starting-work-new-company-looking-forward-meet-coworkers_1258-9641.'
-            'jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1698969600&semt=ais',
-              Name: 'Kathryn Annee',
-              userName: '@anny2002',
-              BarName: 'My Profile',
-              Follower: '850 Follower',
-              Following: '125 Following',
-              Post: '59 Post',),
-            const SizedBox(height: 5,),
-            Container(
-              height:8,
-              width: double.infinity,
-              color: Colors.grey.shade200,
-            ),
-            SizedBox(height: 5,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-              InkWell(
-                onTap: ()=>const GridViewWidget(itemList: []),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 30,
-                    child: Row(
-                      children: [
-                        Icon(Icons.grid_view ),
-                        SizedBox(width:5,),
-                        Text('Grid view'),
-                      ]
-                    ),
+            SizedBox(
+              height: 162,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                   ProfileCart(
+                     appBarName: 'My Profile',
+                    imageLink: AssetsPath.profileLogo,
+                    name: 'Kathryn Annee',
+                    userName: '@anny2002',
+                    totalFollower: '850 Follower',
+                    totalFollowing: '125 Following',
+                    totalPost: '59 Post',
+                   ),
+                  const SizedBox(height: 5,),
+                  Container(
+                    height:8,
+                    width: double.infinity,
+                    color: Colors.grey.shade200,
                   ),
-                ),
+                  const SizedBox(height: 5,),
+                ],
               ),
-                SizedBox(width: 30,),
-                InkWell(
-                  onTap: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                        builder: (context) => const ListViewWidget(itemList: []),
-                    )
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      height: 30,
-                      child: Row(
-                          children: [
-                            Icon((Icons.list) ),
-                            SizedBox(width:5,),
-                            Text('List view'),
-                          ]
+            ),
+            const DefaultTabController(
+              length: 2, // Set the number of tabs
+              child: Expanded(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 56,
+                      width: 280,
+                      child: TabBar(
+                        indicatorColor: Color(0xFF667085),
+                        tabs: [
+                          Tab(
+                            child: Row(
+                              children: [
+                               Icon(Icons.grid_view_outlined,size: 20,color: Colors.black,),
+                                SizedBox(width: 5,),
+                                Text("Grid View",style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
+                                ),),
+                              ],
+                            ),
+                          ),
+                          Tab(
+                            child: Row(
+                              children: [
+                                Icon(Icons.list,size: 22,color: Colors.black,),
+                                SizedBox(width: 5,),
+                                Text("List View",style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
+                                ),),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                )
-              ],
+                    Expanded(
+                      child: TabBarView(
+                        children: [
+                          // Content of Tab 1
+                          UserProfileGridViewPhoto(),
+                          // Content of Tab 2
+                          UserProfileListviewPhoto(),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            SizedBox(height: 10,),
-
-            const SizedBox(height: 5,),
-            Container(
-              height:2,
-              width: double.infinity,
-              color: Colors.grey.shade200,
-            ),
-            const SizedBox(height: 5,),
-            GridViewWidget(itemList: itemList),
-           // ListViewWidget(itemList: itemList),
           ],
         ),
       ),
-
     );
   }
 }
