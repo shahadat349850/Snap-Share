@@ -5,6 +5,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:snapshare/utils/constant.dart';
 import 'package:snapshare/view/screen/auth/login_screen.dart';
 import 'package:snapshare/view/screen/auth/signup_screen.dart';
+import 'package:snapshare/view/screen/main_bottom_navigation_screen.dart';
 import 'package:snapshare/view/screen/message_screen.dart';
 
 import 'notification_screen.dart';
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> goToNextScreen() async {
     Future.delayed(const Duration(seconds: 3)).then(
       (value) {
-        Get.offAll(() => const SignupScreen());
+        Get.offAll(() => const MainBottomNavigationScreen());
       },
     );
   }

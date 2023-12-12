@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:snapshare/utils/constant.dart';
 import '../../utils/colors.dart';
+import '../widget/upload_photo_alertdialog.dart';
 import 'home_screen.dart';
 import 'my_profile_screen.dart';
 
@@ -17,7 +20,7 @@ class _MainBottomNavigationScreenState extends State<MainBottomNavigationScreen>
   final List<Widget> _screens = [
     const HomeScreen(),
     const MyProfileScreen(),
-    const HomeScreen(),
+    const MyProfileScreen(),
     const MyProfileScreen(),
 
   ];
@@ -32,10 +35,14 @@ class _MainBottomNavigationScreenState extends State<MainBottomNavigationScreen>
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _index,
         onTap: (value) {
-          print(value);
-           _index =value;
-           setState(() {
-           });
+          if (value == 2) {
+            // Show alert dialog when the third item is selected
+            uploadPhotoAlertDialog(context);
+          } else {
+            _index = value;
+            setState(() {
+            });
+          }
         },
         backgroundColor: Theme.of(context).brightness == Brightness.dark ?
         AppColors.darkBackgroundColor : AppColors.lightBackgroundColor,
@@ -58,4 +65,5 @@ class _MainBottomNavigationScreenState extends State<MainBottomNavigationScreen>
       ),
     );
   }
+
 }
