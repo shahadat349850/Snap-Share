@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:snapshare/view/screen/searching_photo_scree.dart';
+import 'package:snapshare/view/screen/upload_user_photo_screen.dart';
 import '../../state_holders/main_bottom_nav_controller.dart';
 import '../../utils/colors.dart';
 import 'home_screen.dart';
@@ -17,10 +19,9 @@ class _MainBottomNavigationScreenState extends State<MainBottomNavigationScreen>
 
   final List<Widget> _screens = [
     const HomeScreen(),
+    const SearchingPhotoScreen(),
+    const UploadUserPhotoScreen(),
     const MyProfileScreen(),
-    const HomeScreen(),
-    const MyProfileScreen(),
-
   ];
 
   @override

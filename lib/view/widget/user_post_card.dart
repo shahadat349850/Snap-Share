@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:snapshare/view/screen/user_profile_screen.dart';
 
 class UserPostCard extends StatelessWidget {
   const UserPostCard({
@@ -17,7 +19,9 @@ class UserPostCard extends StatelessWidget {
           children: [
             ListTile(
               leading: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Get.to(()=>const UserProfileScreen());
+                },
                 child: const CircleAvatar(
                   radius: 18,
                   backgroundColor: Colors.blue,
