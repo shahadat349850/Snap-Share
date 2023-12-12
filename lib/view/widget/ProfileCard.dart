@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:snapshare/view/screen/follower_screen.dart';
+import 'package:snapshare/view/screen/following_screen.dart';
 
 class ProfileCart extends StatelessWidget {
   const ProfileCart({
@@ -54,9 +57,10 @@ class ProfileCart extends StatelessWidget {
                   children: [
                     Text(
                       name,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 17,
+                        color: Colors.black.withOpacity(.8)
                       ),
                     ),
                     const SizedBox(height: 3,),
@@ -65,37 +69,51 @@ class ProfileCart extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black38),
+                          color: Colors.black54
+                      ),
                     ),
                     const SizedBox(
                       height: 12,
                     ),
                     Row(
                       children: [
-                        Text(
-                          totalPost,
-                          style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black54
+                        InkWell(
+                          onTap: (){},
+                          child: Text(
+                            totalPost,
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black.withOpacity(.8),
+                            ),
                           ),
                         ),
                         const SizedBox(width: 10),
-                        Text(
-                          totalFollowing,
-                          style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black54
+                        InkWell(
+                          onTap: (){
+                            Get.to(()=>const FollowingScreen());
+                          },
+                          child: Text(
+                            totalFollowing,
+                            style: TextStyle(
+                                fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black.withOpacity(.8),
+                            ),
                           ),
                         ),
                         const SizedBox(width: 10,),
-                        Text(
-                          totalFollower,
-                          style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black54
+                        InkWell(
+                          onTap: (){
+                            Get.to(()=>const FollowerScreen());
+                          },
+                          child: Text(
+                            totalFollower,
+                            style: TextStyle(
+                                fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black.withOpacity(.8),
+                            ),
                           ),
                         ),
                       ],

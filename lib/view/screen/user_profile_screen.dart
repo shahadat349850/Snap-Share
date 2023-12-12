@@ -16,11 +16,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: const Row(
           children: [
-            IconButton(
-                onPressed: () {}, icon: const Icon(Icons.arrow_back_ios_new)),
-            const Text(
+            // IconButton(
+            //     onPressed: () {}, icon: const Icon(Icons.arrow_back_ios_new)),
+            Text(
               "Ostad App",
               style: TextStyle(
                   fontSize: 20,
