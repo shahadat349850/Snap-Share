@@ -10,15 +10,17 @@ class UploadUserPhotoScreen extends StatelessWidget {
         child: SizedBox(
           height: 50,
           width: 150,
-          child: ElevatedButton(
-              onPressed: () {
-                uploadPhotoAlertDialog(context);
-              }, child: const Text("Upload Photo")),
+          child: Column(
+            children: [
+              uploadPhotoAlertDialog(context)
+            ],
+          ),
         ),
       ),
 
     );
   }
+
   uploadPhotoAlertDialog(context){
     return showDialog(
         context: context,
@@ -68,4 +70,6 @@ class UploadUserPhotoScreen extends StatelessWidget {
         }
     );
   }
+
 }
+

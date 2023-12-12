@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:snapshare/utils/constant.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:snapshare/view/screen/searching_photo_scree.dart';
 import 'package:snapshare/view/screen/upload_user_photo_screen.dart';
 import '../../state_holders/main_bottom_nav_controller.dart';
 import '../../utils/colors.dart';
+import '../widget/upload_photo_alertdialog.dart';
 import 'home_screen.dart';
 import 'my_profile_screen.dart';
 
@@ -59,4 +63,5 @@ class _MainBottomNavigationScreenState extends State<MainBottomNavigationScreen>
         }
     );
   }
+
 }

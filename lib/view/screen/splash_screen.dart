@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:snapshare/utils/constant.dart';
+
+import 'package:snapshare/view/screen/auth/login_screen.dart';
+import 'package:snapshare/view/screen/auth/signup_screen.dart';
+import 'package:snapshare/view/screen/main_bottom_navigation_screen.dart';
+import 'package:snapshare/view/screen/message_screen.dart';
+
+import 'notification_screen.dart';
 import 'package:snapshare/view/screen/first_screen.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> goToNextScreen() async {
     Future.delayed(const Duration(seconds: 3)).then(
       (value) {
-        Get.offAll(() => const FirstScreen());
+        Get.offAll(() => const MainBottomNavigationScreen());
       },
     );
   }
