@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
-
+import 'package:snapshare/view/screen/my_profile_screen.dart';
 import '../../utils/colors.dart';
 
 class MessageScreen extends StatefulWidget {
@@ -60,8 +58,13 @@ class _MessageScreenState extends State<MessageScreen> {
             backgroundColor: AppColors.secondaryColor,
             child: Icon(Iconsax.user),
           ),
-          title: Text('Biplob Shil',
-              style: Theme.of(context).textTheme.titleLarge),
+          title: InkWell(
+            onTap: (){
+              Get.to(()=>const MyProfileScreen());
+            },
+            child: Text('Biplob Shil',
+                style: Theme.of(context).textTheme.titleLarge),
+          ),
           subtitle: const Text('Last seen 11:00AM'),
         ),
         actions: [

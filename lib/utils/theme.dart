@@ -70,7 +70,7 @@ class SnapShareAppTheme {
       prefixIconColor: AppColors.lightIconColor,
       suffixIconColor: AppColors.lightIconColor,
       labelStyle: const TextStyle().copyWith(fontSize: 16, color: AppColors.lightTextColor),
-      hintStyle: const TextStyle().copyWith(fontSize: 16, color: AppColors.lightTextColor),
+      hintStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.black.withOpacity(.6)),
       errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
       floatingLabelStyle: const TextStyle().copyWith(color: AppColors.lightTextColor.withOpacity(0.8)),
 

@@ -1,9 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:snapshare/utils/colors.dart';
 import 'package:snapshare/utils/constant.dart';
 import 'package:snapshare/view/screen/auth/login_screen.dart';
 import 'package:snapshare/view/screen/auth/signup_screen.dart';
@@ -45,11 +41,6 @@ class FirstScreen extends StatelessWidget {
                   child: Text("Log In",style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       color: const Color(0xFF4478FF)
                   )),
-                ),
-                IconButton(
-                  onPressed: (){},
-                  icon: const Icon(Iconsax.arrow_down_1,
-                  color: AppColors.iconColor,),
                 ),
               ],
             ),

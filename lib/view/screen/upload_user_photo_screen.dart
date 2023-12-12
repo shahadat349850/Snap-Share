@@ -29,10 +29,10 @@ class UploadUserPhotoScreen extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5)
             ),
-            child: SizedBox(
+            child: const SizedBox(
               height: 200,
               child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [

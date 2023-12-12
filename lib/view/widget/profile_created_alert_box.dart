@@ -3,15 +3,10 @@ import 'package:flutter/material.dart';
 class ProfileCreatedAlertBox extends StatelessWidget {
   const ProfileCreatedAlertBox(
       {super.key,
-      required this.title,
-      required this.desc,
-      required this.buttonText,
-      required this.buttonText2});
+        required this.onTab
+      });
 
-  final String title;
-  final String desc;
-  final String buttonText;
-  final String buttonText2;
+  final VoidCallback onTab;
 
   @override
   Widget build(BuildContext context) {
@@ -39,21 +34,21 @@ class ProfileCreatedAlertBox extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Text(
-            title,
-            style: const TextStyle(
+          const Text(
+            "Create Profile",
+            style: TextStyle(
               color: Color(0xFF1D2939),
               fontSize: 16,
               fontWeight: FontWeight.w700,
             ),
           ),
           const SizedBox(height: 10),
-          SizedBox(
+          const SizedBox(
             width: 219,
             child: Text(
-              desc,
+              "Update your name, profile images and additional number",
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Color(0xFF475467),
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
@@ -71,33 +66,29 @@ class ProfileCreatedAlertBox extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4)),
                   ),
-                  onPressed: () {},
-                  child: Text(
-                    buttonText,
-                    // 'Post Now',
-                    style: const TextStyle(color: Colors.white, fontSize: 14),
+                  onPressed:onTab,
+                  child: const Text(
+                    "update",
+                    style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 hoverColor: const Color(0xFFD0D5DD),
-                child:  Row(
+                child:  const Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      buttonText2,
-                      style: const TextStyle(
+                      "Skip",
+                      style: TextStyle(
                         color: Color(0xFF4378FF),
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                       ),
-                    ),
-                    const Icon(
-                      Icons.keyboard_arrow_down,
-                      size: 30,
-                      color: Color(0xFF4378FF),
                     ),
                   ],
                 ),

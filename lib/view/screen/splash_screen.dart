@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:snapshare/utils/constant.dart';
+
 import 'package:snapshare/view/screen/auth/login_screen.dart';
 import 'package:snapshare/view/screen/auth/signup_screen.dart';
 import 'package:snapshare/view/screen/main_bottom_navigation_screen.dart';
 import 'package:snapshare/view/screen/message_screen.dart';
 
 import 'notification_screen.dart';
-
-
-
+import 'package:snapshare/view/screen/first_screen.dart';
 
 
 class SplashScreen extends StatefulWidget {
