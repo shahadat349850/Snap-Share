@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:snapshare/app/state_holder_binders.dart';
 import 'package:snapshare/utils/theme.dart';
 import 'package:snapshare/view/screen/splash_screen.dart';
 
@@ -13,6 +14,7 @@ class SnapShare extends StatelessWidget {
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      initialBinding: StateHolderBinder(),
       home: const SplashScreen(),
       themeMode: ThemeMode.system,
       theme: SnapShareAppTheme.lightTheme, // light mode
