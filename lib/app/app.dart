@@ -13,7 +13,7 @@ class SnapShare extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialBinding: StateHolderBinder(),
-      home: const MainBottomNavigationScreen(),
+      home: const SplashScreen(),
       themeMode: ThemeMode.system,
       theme: SnapShareAppTheme.lightTheme, // light mode
       darkTheme: SnapShareAppTheme.darkTheme, // dark mode
