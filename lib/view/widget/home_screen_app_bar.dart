@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:snapshare/view/screen/message_screen.dart';
+import 'package:snapshare/view/screen/notification_screen.dart';
+import 'package:snapshare/view/widget/profile_created_alert_box.dart';
 import '../../utils/constant.dart';
 import 'circular_icon_button.dart';
 
@@ -21,6 +25,9 @@ class HomeScreenAppBar extends StatelessWidget {
             children: [
               CircularIconButton(
                 onPressed: () {
+                  ProfileCreatedAlertBox(
+                    onTab: (){},
+                  );
                 },
                 icon: Iconsax.user,
               ),
@@ -33,12 +40,15 @@ class HomeScreenAppBar extends StatelessWidget {
               const Spacer(),
               CircularIconButton(
                 onPressed: () {
+                  Get.to(()=>const NotificationScreen());
                 },
                 icon: Iconsax.notification,
               ),
               const SizedBox(width: 2,),
               CircularIconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(()=>const MessageScreen());
+                },
                 icon: Iconsax.messages_3,
               ),
             ],

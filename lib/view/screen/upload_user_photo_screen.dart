@@ -10,15 +10,17 @@ class UploadUserPhotoScreen extends StatelessWidget {
         child: SizedBox(
           height: 50,
           width: 150,
-          child: ElevatedButton(
-              onPressed: () {
-                uploadPhotoAlertDialog(context);
-              }, child: const Text("Upload Photo")),
+          child: Column(
+            children: [
+              uploadPhotoAlertDialog(context)
+            ],
+          ),
         ),
       ),
 
     );
   }
+
   uploadPhotoAlertDialog(context){
     return showDialog(
         context: context,
@@ -27,10 +29,10 @@ class UploadUserPhotoScreen extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5)
             ),
-            child: SizedBox(
+            child: const SizedBox(
               height: 200,
               child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -68,4 +70,6 @@ class UploadUserPhotoScreen extends StatelessWidget {
         }
     );
   }
+
 }
+
